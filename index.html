@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Universitarias</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <section id="app">
+        <h2>Lista de Tareas Universitarias</h2>
+        <p class="descripcion">
+            Gestiona tus tareas relacionadas con la universidad, trabajo y ejercicio en el gimnasio.
+        </p>
+
+        <input type="text" placeholder="Ingrese una nueva tarea" v-model="nuevaTarea">
+        <button @click="agregarTarea">Agregar Tarea</button>
+
+        <article>
+            <div class="control-cantidad">
+                <button @click="disminuir" :disabled="cantidad <= 1">-</button>
+                <span class="cantidad-label">{{ cantidad }}</span>
+                <button @click="incrementar" :disabled="cantidad >= 100">+</button>
+            </div>
+            <input type="range" 
+                   class="form-range" 
+                   min="1" 
+                   max="100" 
+                   v-model="cantidad" 
+                   :class="rangeColorClass">
+        </article>
+
+        <article class="tareas">
+            <ul>
+                <li v-for="(tarea, index) in tareas" 
+                    :key="index" 
+                    :class="{ completada: tarea.estado === 'true' }" 
+                    @click="toggleEstado(index)">
+                    {{ tarea.nombre }} : {{ tarea.estado === 'true' ? 'Completada' : 'Pendiente' }}
+                </li>
+            </ul>
+            <p class="tareas-completas">Tareas completadas: {{ cuantosCompletadas() }} / {{ tareas.length }}</p>
+        </article>
+
+        <h2>Lista completada por</h2>
+        <h2>Zaid. Ahora si está haciendo todas las tareas</h2>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

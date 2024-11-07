@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333333; /* Gris oscuro */
+    color: #f0f0f0; /* Texto claro para mejor contraste */
+    text-align: center;
+    padding: 20px;
+}
+
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #4a4a4a; /* Gris medio para el contenedor */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #ff4d4d; /* Rojo claro */
+}
+
+.descripcion {
+    font-size: 0.9em;
+    color: #d3d3d3; /* Gris claro */
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin: 15px 0;
+    width: calc(100% - 16px);
+    border-radius: 5px;
+    border: 1px solid #666666; /* Borde gris oscuro */
+    background-color: #555555; /* Fondo gris oscuro */
+    color: #ffffff; /* Texto blanco */
+}
+
+.control-cantidad button {
+    background-color: #ff4d4d; /* Rojo claro */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.control-cantidad button:disabled {
+    background-color: #777777; /* Gris oscuro desactivado */
+    cursor: not-allowed;
+}
+
+.cantidad-label {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.form-range {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.range-green {
+    background-color: #8c8c8c; /* Gris oscuro */
+}
+
+.range-orange {
+    background-color: #b3b3b3; /* Gris medio */
+}
+
+.range-red {
+    background-color: #ff4d4d; /* Rojo claro */
+}
+
+.tareas li {
+    padding: 8px;
+    border-bottom: 1px solid #666666; /* Gris oscuro */
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.tareas li.completada {
+    text-decoration: line-through;
+    color: #ff4d4d; /* Rojo */
+}
+
+.tareas-completas {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #d3d3d3; /* Gris claro */
+}
